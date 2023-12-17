@@ -1,0 +1,353 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Turnitin, LLC" />
+    <meta name="keywords" content="" /> 
+    <meta name="description" content="" />
+    <meta name="viewport" content="width = initial-scale" />
+    <meta name="viewport" content="height = initial-scale" />
+    
+<title>Turnitin Originality Report</title>
+
+<base href="http://api.turnitin.com">
+<style type="text/css">
+	
+body	{
+	color: #000;
+	background: #ddd;
+	padding: 0;
+	border: 0;
+	font: 14px Arial, Verdana, sans-serif;
+	margin: 0;
+	text-align: center;
+	}
+	
+form	{
+	padding: 0;
+	margin: 0;
+	}
+	
+p	{
+	padding: .8em 1.5em;
+	margin: 0;
+	text-align: left;
+	}
+	
+img	{
+	border: 0;
+	padding: 0;
+	}
+
+div	{
+	padding: 0;
+	border: 0;
+	text-align: left;
+	}
+	
+strong	{
+	font-weight: bold;
+	}
+	
+h2	{
+	font-size: 15px;
+	margin: 20px 0 10px 20px;
+	}
+	
+a:link, a:visited	{
+	text-decoration: underline;
+	color: #00f;
+	}
+	
+a:hover, a:active	{
+	text-decoration: underline;
+	color: #888;
+	}
+	
+img#logo	{
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	}
+	
+div#container	{
+	border: 1px solid #aaa;
+	width: 770px;
+	margin: 20px auto;
+	background: #fff;
+	padding: 10px 0;
+	}
+	
+div#top	{
+	background: #fff;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 15px;
+	}
+	
+div#content	{
+	background: #fff;
+	}
+	
+#top p	{
+	padding: .3em 0 .3em 20px;
+	}
+
+#top span	{
+	padding-right: 35px;
+	}
+	
+#top p#orig	{
+	padding-top: 15px;
+	}
+	
+#orig span#score.red	{
+	border-right: 18px solid red;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.orange	{
+	border-right: 18px solid orange;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.yellow	{
+	border-right: 18px solid yellow;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.green	{
+	border-right: 18px solid green;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+#orig span#score.blue	{
+	border-right: 18px solid blue;
+	padding: .2em .5em;
+	margin: 0 1em;
+	background: white;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	}
+	
+div.divider	{
+	width: 7in;
+	border: 1px dotted #888;
+	margin: auto;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	background: #ddd;
+	font-size: 15px;
+	}
+	
+div.links	{
+	width: 7in;
+	margin: auto;
+	}
+	
+.links div	{
+	padding: 15px 20px 15px 20px;
+	border-bottom: 1px dotted #888;
+	}
+	
+.links div#last	{
+	padding: 15px 20px 20px 20px;
+	border-bottom: 0;
+	}
+	
+div.number	{
+	float: right;
+	background: white;
+	border: 1px solid #888;
+	margin: 0 0 0 20px;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+div.number-l	{
+	float: left;
+	background: white;
+	border: 1px solid #888;
+	margin: 6px 16px 10px 0;
+	padding: .1em .5em;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	}
+	
+.links div p	{
+	padding: .2em 1.5em .4em 0;
+	}
+	
+.links div p#mess	{
+	padding: .2em 1.5em 0 0;
+	}
+	
+div#body	{
+	line-height: 1.5em;
+	width: 7in;
+	margin: auto;
+	padding-bottom: 20px;
+	}
+	
+#body p	{
+	color: #555;
+	padding-top: 30px;
+	line-height: 20px;
+	}
+
+	
+#body a	{
+	display: block;
+	color: #D10A0A;
+	margin: 1em 3em;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 1em 1em;
+	border: 1px dotted #888;
+	font-weight: bold;
+	font-size: 15px;
+	text-decoration: none;
+	line-height: 26px;
+	background: #FFFFE5;
+	}
+
+#body span	{
+	color: #555;
+	font-weight: normal;
+	font-size: 14px;
+	}
+
+#body span.number	{
+	display: block;
+	float: right;
+	color: #000;
+	font-weight: normal;
+	border: 1px solid #888;
+	padding: 0 6px;
+	font-weight: bold;
+	margin-left: 15px;
+	font-size: .9em;
+	background: #fff;
+	}
+	
+#actions	{
+	display: none;
+	}
+
+</style>
+
+
+
+</head>
+
+<body id="or_print_report">
+
+
+<div id="container">
+
+<div id="top">
+    <div id="content">
+        <!-- ######### Top Body  ##########################--> 
+        <div id="top_body">
+            <p id="title">
+            <img src="/r/build/images/b3964fd7e38c8fcbb8bfbf2efc1f0635cb_turnitin_logo.gif" id="logo" width="60">
+            Turnitin Originality Report
+            </p>
+                <div class="general_info">
+                    <p>
+                        <span>Draft Submission</span>
+                        
+                        by Student User
+                        
+                    </p>
+                    <p>
+                        From STWA101FN - Final Reflective Essay-Draft submission STWA101 (Moodle TT) (STWA101FN-International Cultural Communication Skills-M20 (Moodle TT))
+                    </p>
+                    <ul>
+                        <li>Processed on 01-Sep-2020 02:46 IST</li>
+                        <li>ID: 1370957869</li>
+                        <li>Word Count: 809</li>
+                    </ul>
+                </div>
+                <div class="similarity_box">
+                    <div class="overall_similarity">
+                        <div class="color_box green">&nbsp;</div>
+                        <div class="similarity_title">Similarity Index</div>
+                        <div class="similarity_percent">3%</div>
+                    </div>
+                    <div class="similarity_by_source">
+                        <div class="similarity_title">Similarity by Source</div>
+                        <dl>
+                            <dt>Internet&nbsp;Sources:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Publications:</dt>
+                            <dd>0%</dd>
+                            <div class="clear"></div>
+                            <dt>Student&nbsp;Papers:</dt>
+                            <dd>3%</dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                                 
+        </div>
+        <!-- ######### END Top Body  ##########################--> 
+    </div>
+</div>
+
+<div class="divider">sources:</div>
+
+<div class="links">
+
+	<div id="last">
+	<div class="number-l">1</div>
+	<p>3% match (student papers from 16-Aug-2020)</p>
+
+	<a href="/paperInfo.asp?r=59.2040188578348&svr=40&session-id=81611373b16a484a81c959eeb3b2d592&lang=en_us&oid=oid:1:1814250242&perc=3">Submitted to Softwarica College Of IT & E-Commerce on 2020-08-16</a>
+
+	</div>
+
+</div>
+
+
+
+<div class="divider">paper text:</div>
+<div id="body">
+<a href="javascript:openDSC(1814250242, 1, '62');" onmouseover="doRollover(1);" onmouseout="undoRollover(1);" id="62" name="1" ><span class="b-ref">1</span>Assignment Title: Reflective Essay Coursework Type: Individual Module Name: International Cultural Communication Intake:<span> September </span>/November 2019 Submitted By CU ID:<span> 10173183 </span>College ID:<span> 190199 </span>Name:<span> Gauri Shankar Sharma </span>Reflective Essay<span> In </span>this</a> semester, International Cultural Communication subject provided lots of information about British culture and language, how does it different from Nepali culture and language, how is the relation between Nepal and UK. This semester provided a different kind of experience from the previous one. This semester gave not only the IT related knowledge but also a kind of feeling of visiting the British countries and discovering new things, experiencing the real-life experience of the British society. The main things that I learned from this semester are listed below. ? To speak English more properly ? To speak in front of many people without having any problem ? To build confidence ? To make an excellent presentation ? To give speech about presentation in front of people ? To make a good research on a thing ? To develop communication skill ? About internet revolution and digital future technology ? About British Society ? About Nepal-UK relation I had never taken any online classes before this semester. I got to know about the online classes, how does it start and how does it end, how to stay in touch with friends and teachers. The main benefit of the online classes is that it is easy to get in touch with friend and teacher quickly at any time, easier to get join during a class, any classes can be revised at any time, lots of free time to do other stuffs. But there are also some benefits like the classes won’t be as good as the class that takes place in the college inside a room and student can leave at any time during the class, teachers can’t see whether the student listening properly or not. Anyway, the experience with the online classes went well. During this semester, I also have taken a future learn course titled "Exploring English: British Council". It was very interesting an entertaining course. From this course, I got know a lot about why English language is widely used, how actually English language is spoken by the British people. This course taught me a lot about the British culture, music, literature, society, countryside etc. I also gave few short quizzes during the course about the English language and I did very well. I also had given individual and group presentations on some particular topics in this semester and the presentation went very well. Before this semester, my presentations were not that as much good as it was supposed to be because my research were weak, design of presentation was not that much good and I would have a bit difficulty while speaking in front of people. But this semester helped me how to improve in those things and started speaking in front of people without hesitating. I also faced lots of challenges during the presentations like searching information about a thing, gathering the searched information and presenting it in the presentation slide in a way which will be easier to explain, explaining the things of the presentation in front of people. I also got good feedback from my friends and teacher after the presentation. Teacher would give me some advises about including more things inside the presentation, changing some of the points of the presentation. The most interesting part in this semester was about learning the British society and culture. Due to the Corona virus crisis, all student had to take online class instead of going to the college and take classes. It would have been more interesting and entertaining if we had taken the classes in the college. It was very interesting learning about the British media but It would had been more exciting if we had a chance to take practical experience of the British society. The course would have been more fun to study if there were more games like Ice Braking during the semester. This Ice braking game happened in the college before the college was closed due to the corona virus crisis. So, corona virus might be the reason of not happening more games like Ice Braking. During the end of this semester, I would like to do the viva in different topic not in “Internet Censorship and its impact on Education” because I did not clearly know the meaning of the internet censorship until I joined the viva class and listened to my group friends’ lectures. I think this viva didn’t gone as well as it was supposed to be. Anyway, my personal experience with this semester went very excellent and impressive. I learnt lots of things form this semester. I got know about the online classes because I had never taken online classes before this semester. I got to know a lot about the British life style, media, culture, language, music and the relation between Nepal and UK. Specially, this semester helped me to improve English language and how the British culture is different form Nepali culture. 1 10173183 2 10173183 3 10173183 4 10173183 5 10173183 
+</div>
+</div>
+</body>
+</html>
